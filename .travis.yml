@@ -10,7 +10,6 @@ before_script:
 script:
   - make VERBOSE=1
   - make tests && make test
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then (cd ../integ && go get -t -v ./... && go test); fi
 
 after_script:
   - ./dublin-traceroute
