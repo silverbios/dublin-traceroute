@@ -22,9 +22,13 @@ matrix:
     - os: osx
       osx_image: xcode11
       compiler: gcc
-    - os: osx
-      osx_image: xcode10
-      compiler: gcc
+
+addons:
+  homebrew:
+    # packages are installed in install_dependencies_osx.sh because libtins
+    # needs to be installed from sources on older osx versions, because they
+    # have old versions in binary form.
+    update: true
 
 # GitHub project metadata
 project:
