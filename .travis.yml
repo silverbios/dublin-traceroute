@@ -14,11 +14,17 @@ script:
 after_script:
   - ./dublin-traceroute
 
-os: osx
-
-osx_image:  xcode12.2
-
-compiler: clang
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode12.2
+      compiler: gcc
+    - os: osx
+      osx_image: xcode11
+      compiler: gcc
+    - os: osx
+      osx_image: xcode10
+      compiler: gcc
 
 # GitHub project metadata
 project:
